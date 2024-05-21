@@ -8,9 +8,9 @@ class ProgramRunnerTest {
 
     @Test
     fun run() {
-        val runner = ProgramRunner("echo \"4+4\" | bc")
-        val res = runner.run("echo \"4+4\" | bc")
-        assertEquals(res.first, Result.PASS)
-        print("****************** ${res.second}")
+        val runner = ProgramRunner("bc")
+        val res = runner.run("4+4")
+        assertEquals(Result.PASS, res.first)
+        assertEquals("8", res.second.trim())
     }
 }
